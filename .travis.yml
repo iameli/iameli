@@ -1,0 +1,8 @@
+deploy:
+  provider: s3
+  access_key_id: AKIAIJCOOVKET4MKA2OA
+  secret_access_key:
+    secure: oXP+paGsl8mgRVTUhPg2yVaTnleD9QudSQtdxxwWZ7R+waar+68DMZAAatNw4sS0ii/qtSTXmqH+o7EHiYVuAAUzHcHAknBjctPdqXftFAiAUt85+s9huqQTN4A+R77U5zpQWA7lD4Ri+kC4y9lEV8fOlXmoR3X5mNROMAhapFA=
+  bucket: iame.li
+  on:
+    repo: iameli/iameli
