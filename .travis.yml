@@ -1,3 +1,4 @@
+script: "echo yay"
 deploy:
   provider: s3
   access_key_id: AKIAIJCOOVKET4MKA2OA
