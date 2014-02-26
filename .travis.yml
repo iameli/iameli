@@ -1,5 +1,8 @@
 script: "echo yay"
 deploy:
+  edge: true
+  region: us-west-2
+  endpoint: s3-us-west-2.amazonaws.com
   provider: s3
   access_key_id: AKIAIJCOOVKET4MKA2OA
   secret_access_key:
