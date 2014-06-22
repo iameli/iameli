@@ -1,40 +1,34 @@
+html {
+  height: 100%;
+}
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased; /* White-on-black. */
+  min-height: 100%;
   background-color: #222;
+  line-height: 1.4em;
   color: #ddd;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
-#JustOneDangColumnInTheMiddle {
-  width: 480px;
-  height: 100%;
-  position: absolute;
-  left: 50%;
-  margin-left: -240px;
-  /* Internet Explorer 10 */
-  display:-ms-flexbox;
-  -ms-flex-pack:center;
-  -ms-flex-align:center;
-  /* Firefox */
-  display:-moz-box;
-  -moz-box-pack:center;
-  -moz-box-align:center;
-  /* Safari, Opera, and Chrome */
-  display:-webkit-box;
-  -webkit-box-pack:center;
-  -webkit-box-align:center;
-  /* W3C */
-  display:box;
-  box-pack:center;
-  box-align:center;
-}
-#AndWhyDontWeCenterThatVerticallyToo {
-
+#WeLiveInTheFlexboxWorldNowSoIOnlyNeedOneDivHere {
+  max-width: 480px;
+  margin: auto;
+  padding: 5px 10px;
 }
 h1 {
-  font-weight: lighter;
+  font-weight: 300;
+  margin-top: 0px;
+  line-height: initial;
 }
 a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+}
+p:last-child {
+  margin-bottom: 0px;
 }
