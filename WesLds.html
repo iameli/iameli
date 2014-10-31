@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Wes LDS!</title>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <style>
+            #Controls {
+                padding: 15px;
+                width: 600px;
+                margin: 0 auto;
+            }
+            #Frame {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+            }
+            input, textarea {
+                width: 100%;
+            }
+            textarea {
+                height: 400px;
+            }
+            button {
+                display: block;
+                margin: 0 auto;
+                font-size: 5em;
+                cursor: pointer;
+            }
+        </style>
+        <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#Go").on('click', function(){
+                    try {
+                        var seconds = parseInt($('#Seconds').val()) * 1000
+                        var urls = $('#Urls').val().split('\n')
+                        console.log(seconds, urls)
+                        var slideIdx = 0;
+                        var switchSlide = function(){
+                            $("#Frame").attr('src', urls[slideIdx])
+                            slideIdx = (slideIdx + 1) % urls.length
+                        }
+                        $('#Controls').css('display', 'none')
+                        $('#Frame').css('display', 'block')
+                        switchSlide()
+                        setInterval(switchSlide, seconds)
+                    }
+                    catch (e) {
+                        console.error(e, e.stack)
+                        alert('you suck')
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id="Controls" style="padding: 15px">
+            Seconds per page<br>
+            <input type="text" id="Seconds"><br><br>
+            URLs to visit, one per line<br>
+            <textarea id="Urls"></textarea><br><br>
+            <button id="Go">Go!</button>
+        </div>
+        <iframe id="Frame" style="display: none">
+    </body>
+</html>
