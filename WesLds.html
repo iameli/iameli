@@ -33,6 +33,9 @@
         <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
         <script>
             $(document).ready(function(){
+                $("#Fullscreen").on('click', function(){
+                    document.body.webkitRequestFullscreen()
+                })
                 $("#Go").on('click', function(){
                     try {
                         var seconds = parseInt($('#Seconds').val()) * 1000
@@ -58,6 +61,7 @@
     </head>
     <body>
         <div id="Controls" style="padding: 15px">
+            <button id="Fullscreen">Go Full Screen</button><br>
             Seconds per page<br>
             <input type="text" id="Seconds"><br><br>
             URLs to visit, one per line<br>
