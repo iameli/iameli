@@ -1,0 +1,15 @@
+{
+  "name": "discord-time",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "chrono-node": "^2.6.3"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "scripts": {
+    "build": "parcel build index.html --public-url ./ --no-cache --dist-dir ../dist/discord-time"
+  }
+}

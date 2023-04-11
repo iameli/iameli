@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord Time Formatter</title>
+    <style>
+      html,
+      body,
+      main {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #222;
+        color: #fff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 1000px;
+      }
+      input {
+        background-color: black;
+        color: green;
+        font-size: 2em;
+        margin: 1em;
+        padding: 0.3em;
+      }
+      table {
+        margin: auto;
+        font-size: 1.4em;
+      }
+      code {
+        font-size: 1.5em;
+      }
+      .row {
+        display: flex;
+        justify-content: space-around;
+        padding: 1em 0;
+        border-bottom: 1px dotted white;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+        transition: background-color 500ms ease;
+      }
+      .row.copy {
+        background-color: white;
+        transition: background-color 0ms ease;
+      }
+      .row:last-child {
+        border-bottom: none;
+      }
+      .cell {
+        flex-basis: 0px;
+        flex-grow: 1;
+      }
+      .cell-left {
+        padding-right: 20px;
+        text-align: right;
+      }
+      tr {
+        padding-bottom: 5px;
+        border-bottom: 5px;
+      }
+      h1 {
+        font-weight: lighter;
+      }
+      h1,
+      h5 {
+        margin: 0;
+        padding: 0.5em;
+      }
+      h5 {
+        margin-left: 10px;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>Discord time formatter</h1>
+        <h5>Type the time you want to send to your friends on Discord!</h5>
+        <input
+          class="timestr"
+          placeholder="e.g. '4:20 tomorrow' or 'in 30 seconds'"
+        />
+      </div>
+      <div class="output"></div>
+    </main>
+  </body>
+  <script src="web.mjs" type="module"></script>
+</html>
