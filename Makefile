@@ -29,6 +29,7 @@ discord-time:
 	&& yarn install \
 	&& yarn run build
 
+.PHONY: car
 car:
 	rm -rf iameli.car \
 	&& go install github.com/ipld/go-car/cmd/car@latest \
