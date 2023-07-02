@@ -1,0 +1,26 @@
+{
+  "name": "iameli-streams",
+  "version": "1.0.0",
+  "browser": "dist/iameli-streams.js",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.22",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "dev": "run-p dev:rebuild dev:ngrok",
+    "dev:rebuild": "nodemon -w src/ -e tsx -x yarn run prepare",
+    "dev:ngrok": "ngrok http file://$(realpath dist) --log stderr --log-format logfmt",
+    "prepare": "parcel build --target browser ./src/index.tsx --dist-dir dist"
+  },
+  "targets": {
+    "main": false,
+    "browser": {
+      "context": "browser",
+      "includeNodeModules": true
+    }
+  }
+}
