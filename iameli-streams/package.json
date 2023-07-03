@@ -4,23 +4,36 @@
   "browser": "dist/iameli-streams.js",
   "license": "MIT",
   "dependencies": {
+    "@livepeer/react": "^2.5.8",
+    "buffer": "^6.0.3",
     "nodemon": "^2.0.22",
     "npm-run-all": "^4.1.5",
     "parcel": "^2.9.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.1"
   },
   "scripts": {
     "dev": "run-p dev:rebuild dev:ngrok",
     "dev:rebuild": "nodemon -w src/ -e tsx -x yarn run prepare",
-    "dev:ngrok": "ngrok http file://$(realpath dist) --log stderr --log-format logfmt",
+    "dev:ngrok": "ngrok http file://$(realpath dist) --log=stderr --log-format=logfmt --host-header=rewrite",
     "prepare": "parcel build --target browser ./src/index.tsx --dist-dir dist"
   },
   "targets": {
     "main": false,
     "browser": {
       "context": "browser",
-      "includeNodeModules": true
+      "includeNodeModules": true,
+      "outputFormat": "esmodule"
     }
+  },
+  "browserslist": "> 0.5%",
+  "alias": {
+    "process": "./src/process.tsx",
+    "buffer": "./src/process.tsx"
+  },
+  "@parcel/transformer-js": {
+    "inlineFS": true,
+    "inlineEnvironment": true
   }
 }
