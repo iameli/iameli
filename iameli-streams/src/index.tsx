@@ -26,7 +26,7 @@ const App = () => {
   return (
     <Container>
       <LivepeerConfig client={livepeerClient}>
-        <Player playbackId="d649rj83prk16y67" autoPlay={true}></Player>
+        <Player playbackId="d649rj83prk16y67" autoPlay={true} lowLatency={true}></Player>
       </LivepeerConfig>
     </Container>
   );
