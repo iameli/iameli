@@ -17,7 +17,8 @@
     "dev": "run-p dev:rebuild dev:ngrok",
     "dev:rebuild": "nodemon -w src/ -e tsx -x yarn run prepare",
     "dev:ngrok": "ngrok http file://$(realpath dist) --log=stderr --log-format=logfmt --host-header=rewrite",
-    "prepare": "parcel build --target browser ./src/index.tsx --dist-dir dist"
+    "prepare": "parcel build --target browser ./src/index.tsx --dist-dir dist",
+    "local": "parcel serve src/index.html"
   },
   "targets": {
     "main": false,
